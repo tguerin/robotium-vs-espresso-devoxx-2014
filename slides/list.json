@@ -3,7 +3,7 @@
     "filename": "main.html",
     "attr": {
       "id": "Cover",
-      "data-background": "../lib/img/test-cover.jpg"
+      "data-background": "lib/img/test-cover.jpg"
     }
   },
   {
@@ -16,7 +16,7 @@
   {
     "filename": "slide_1_mise_en_place.html",
     "attr": {
-      "data-background": "../lib/img/setup-cover.png",
+      "data-background": "lib/img/setup-cover.png",
       "style": "display: block; top: -20px; margin-top: -20px",
       "class": "header center present"
     }
@@ -45,7 +45,7 @@
   {
     "filename": "slide_5_expressivite.html",
     "attr": {
-      "data-background": "../lib/img/expressive.png",
+      "data-background": "lib/img/expressive.png",
       "style": "display: block; top: -20px; margin-top: -20px",
       "class": "header center present"
     }
@@ -102,7 +102,7 @@
   {
     "filename": "slide_14_enchainements.html",
     "attr": {
-      "data-background": "../lib/img/chun-li.png",
+      "data-background": "lib/img/chun-li.png",
       "style": "display: block; top: -20px; margin-top: -20px",
       "class": "header center present"
     }
@@ -124,7 +124,7 @@
   {
     "filename": "slide_17_conclusion.html",
     "attr": {
-      "data-background": "../lib/img/espresso-what-else.png",
+      "data-background": "lib/img/espresso-what-else.png",
       "style": "display: block; top: -20px; margin-top: -20px",
       "class": "header center present"
     }
