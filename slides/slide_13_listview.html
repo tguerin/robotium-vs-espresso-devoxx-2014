@@ -1,0 +1,77 @@
+<h3>ListView</h3>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+
+    <h4>Robotium</h4>
+    <pre class="fragment grow"><code class="java">// Clic sur item
+solo.clickOnText("textToFind");
+
+// Si jamais il y'en a plusieurs -> utilisation d'un index
+solo.clickOnText("textToFind", 3);
+
+// Ou choisir directement la ligne
+solo.clickInList(2);</code></pre>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+
+    <h4>Espresso</h4>
+    <div style="text-align: left;">
+        <ul style="text-align: left; list-style: circle; line-height: 1.7em;">
+            <li><span style="text-decoration: line-through">Espresso.onView</span> <span class="fragment fadin">Espresso.onData</span></li>
+        </ul>
+    </div>
+    <pre><code class="javascript">onData(allOf(is(instanceOf(String.class)), is("textToFind"))).perform(click());
+
+// Ou directement à une position
+onData(is(instanceOf(String.class))).atPosition(0).perform(click());
+
+// Possibilité de préciser une listview, utile pour le view pager
+onData(allOf(is(instanceOf(String.class)), is("textToFind")))
+        .inAdapterView(withId(R.id.my_list)).perform(click());
+
+// Interaction avec une vue enfant de la ligne
+onData(allOf(is(instanceOf(String.class)), is("textToFind")))
+        .onChildView(withId(R.id.my_child))
+        .perform(click());</code></pre>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+
+    <h4>Espresso (cas plus complexe) 1/2</h4>
+
+    <pre><code class="java">// Type renvoyé par la méthode getItem de l'adapteur
+public class Item {
+    public String name;
+    public String itemContent;
+}</code></pre>
+<br/>
+<pre><code class="java">onData(allOf(is(instanceOf(Item.clazz)),
+    hasProperty("name", equalTo("nameToFind")))).perform(click());</code></pre>
+</section>
+
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+
+    <h4>Espresso (cas plus complexe) 2/2</h4>
+<pre class="fragment"><code class="java">public static Matcher&lt;Object&gt; withItemName(final Matcher&lt;String&gt; itemTextMatcher){
+    return new BoundedMatcher&lt;Object, Item&gt;(Item.class) {
+        @Override
+        public boolean matchesSafely(Item item) {
+            return itemTextMatcher.matches(item.name);
+        }
+
+        @Override
+        public void describeTo(Description description) {
+            description.appendText("with item name: ");
+            itemTextMatcher.describeTo(description);
+        }
+    };
+}</code></pre>
+<br/>
+<pre class="fragment fadin"><code class="java">onData(withItemName(equalTo("nameToFind"))).perform(click());</code></pre>
+</section>

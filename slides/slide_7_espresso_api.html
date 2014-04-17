@@ -1,0 +1,81 @@
+<h3>Espresso API</h3>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+    <div style="text-align: left">
+        <ul style="list-style: circle; line-height: 1.7em">
+           <li class="fragment fadein">Un unique point d'entrée : Espresso</li>
+           <li class="fragment fadein">2 types d'interactions possibles (onView et onData)</li>
+           <li class="fragment fadein">3 composants essentiels : <ul>
+               <li>ViewMatchers</li>
+               <li>ViewAssertions</li>
+               <li>ViewActions</li>
+           </ul></li>
+            <li class="fragment fadein">Utilise activement Hamcrest</li>
+        </ul>
+    </div>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+                   data-background-transition="slide" data-background-position="0% 25%" class="future" hidden="" style="display: block;">
+    <h4>ViewMatchers</h4>
+    <div style="text-align: left">
+        <ul style="list-style: circle; line-height: 1.7em">
+            <li>Collection d'objets pour localiser une vue dans la hiérarchie
+                <ul class="fragment fadein"><li >ViewMatchers.withId(int viewId)</li>
+                    <li>ViewMatchers.withText(String text)</li>
+                    <li>ViewMatchers.hasSibling(Matcher&lt;View&gt; siblingMatcher)</li></ul></li>
+            <li class="fragment fadein">Tous implémentent l'interface Matcher &lt;? super View&gt;</li>
+            <li class="fragment fadein">Manque de restrictions = AmbiguousViewMatcherException</li>
+        </ul>
+    </div>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="future" hidden="" style="display: block;">
+    <h4>Exemples ViewMatchers</h4>
+    <pre class="fragment fadein"><code class="java" style="font-size: 23px">onView( withId(R.id.section_label) )</code></pre>
+    <br/>
+    <pre class="fragment fadein"><code class="java" style="font-size: 23px">onView( allOf(withId(R.id.section_label), withText("Section 1")) )</code></pre>
+    <br/>
+    <pre class="fragment fadein"><code class="java" style="font-size: 23px">onView( withIdAndText(R.id.section_label, "Section 1") )</code></pre>
+</section>
+
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="future" hidden="" style="display: block;">
+    <h4>ViewAssertions</h4>
+    <div style="text-align: left">
+        <ul style="list-style: circle; line-height: 1.7em">
+            <li>Collection d'objets pour vérifier l'état d'une vue<ul class="fragment fadein">
+                <li>ViewAssertions.doesNotExist()</li>
+                <li>ViewAssertions.matches(matcher)</li>
+                <li>ViewAssertions.selectedDescendantsMatch(selector, matcher)</li></ul>
+            <li class="fragment fadein">Utilisation de matchers</li>
+            <li class="fragment fadein">Passées en paramètres de ViewInteraction.check</li>
+        </ul>
+    </div>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="future" hidden="" style="display: block;">
+    <h4>Exemples ViewAssertions</h4>
+    <pre class="fragment fadein"><code class="java" style="font-size: 23px">onView(withId(R.id.section_label)).check(doesNotExist())</code></pre>
+    <br/>
+    <pre class="fragment fadein"><code class="java" style="font-size: 23px">onView(withId(R.id.section_label)).check(matches(isDisplayed()))</code></pre>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="future" hidden="" style="display: block;">
+    <h4>ViewActions</h4>
+    <div style="text-align: left">
+        <ul style="list-style: circle; line-height: 1.7em">
+            <li>Collection d'objets pour intéragir avec une vue<ul class="fragment fadein">
+                <li>ViewActions.click()</li>
+                <li>ViewActions.typeText(text)</li></ul>
+            <li class="fragment fadein">Passées en paramètres de ViewInteraction.perform</li>
+        </ul>
+    </div>
+    <br/>
+    <pre class="fragment fadein"><code class="java" style="font-size: 23px">onView(withId(R.id.my_button)).perform(click())</code></pre>
+</section>

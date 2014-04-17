@@ -1,0 +1,53 @@
+<h3>Dépendances Gradle</h3>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+    <div>
+    <h4>Robotium</h4>
+    <pre><code class="java">dependencies {
+    androidTestCompile('com.jayway.android.robotium:robotium-solo:5.1')
+    androidTestCompile('com.squareup:fest-android:1.0.7')
+}</code></pre>
+    </div>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+    <div>
+    <h4>Espresso</h4>
+    <pre><code class="java">android.packagingOptions {
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'LICENSE.txt'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/NOTICE'
+}</code></pre>
+<pre><code class="java">dependencies {
+    /* Jars récupérés depuis https://code.google.com/p/android-test-kit */
+    androidTestCompile files('libs/espresso-1.1.jar', 'libs/testrunner-1.1.jar',
+        'libs/testrunner-runtime-1.1.jar')
+    androidTestCompile 'com.google.guava:guava:14.0.1',
+        'com.squareup.dagger:dagger:1.1.0',
+        'org.hamcrest:hamcrest-core:1.1',
+        'org.hamcrest:hamcrest-integration:1.1',
+        'org.hamcrest:hamcrest-library:1.1'
+}</code></pre>
+    </div>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="future" hidden="" style="display: block;">
+        <h4>Double Espresso</h4>
+    <h5><a href="https://github.com/JakeWharton/double-espresso">https://github.com/JakeWharton/double-espresso</a></h5>
+    <br/>
+    <pre><code class="java">android.packagingOptions {
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'LICENSE.txt'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/NOTICE'
+}</code></pre>
+    <br/>
+<pre class="fragment grow"><code class="java">androidTestCompile 'com.jakewharton.espresso:espresso:1.1-r2'
+androidTestCompile 'com.jakewharton.espresso:espresso-support-v4:1.1-r2'</code></pre>
+
+
+</section>

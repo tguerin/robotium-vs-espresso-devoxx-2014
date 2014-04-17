@@ -1,0 +1,20 @@
+<h3>Action bar</h3>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+
+    <h4>Robotium</h4>
+    <pre><code class="java">solo.clickOnActionBarItem(R.id.action_example);
+
+// Cas de l'action bar overflow
+solo.sendKey(KeyEvent.KEYCODE_MENU);
+solo.clickOnText("action");
+</code></pre>
+
+    <h4>Espresso</h4>
+    <pre><code class="java">onView(withId(R.id_action_example)).perform(click());
+
+// Cas de l'action bar overflow
+openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
+onView(withText("action")).perform(click());</code></pre>
+</section>

@@ -1,0 +1,28 @@
+<h3>Robotium API</h3>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+    <div style="text-align: left">
+        <ul style="list-style: circle; line-height: 1.7em">
+           <li class="fragment fadein">Une classe centrale : Solo</li>
+           <li class="fragment fadein">Des méthodes utilitaires :<ul>
+               <li>getView(int viewId)</li>
+               <li>clickOnButton(int index)</li>
+               <li>clickOnButton(String text)</li>
+               <li>searchText(String text)</li>
+               <li>et bien d'autres encore</li>
+           </ul></li>
+            <li class="fragment fadein">Assertions avec FEST Android</li>
+        </ul>
+    </div>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="future" hidden="" style="display: block;">
+<h4>Exemple</h4>
+<pre class="fragment grow"><code class="java">// Récupération de la vue
+TextView sectionLabel = (TextView) solo.getView(R.id.section_label);
+
+// Assertions
+ANDROID.assertThat(sectionLabel).hasText("Section 1").isVisible();</code></pre>
+</section>
