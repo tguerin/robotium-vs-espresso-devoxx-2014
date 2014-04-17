@@ -1,6 +1,8 @@
 # Generated on 2014-04-08 using generator-reveal 0.3.4
 module.exports = (grunt) ->
 
+    grunt.loadNpmTasks 'grunt-gh-pages'
+
     grunt.initConfig
 
         watch:
