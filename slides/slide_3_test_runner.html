@@ -1,0 +1,31 @@
+<h3>Test runner</h3>
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+<h4>Configuration</h4>
+<div style="text-align: left;">
+<ul style="list-style: circle; line-height: 1.7em;">
+    <li class="fragment fadein">Robotium utilise le test runner de la plateforme</li>
+    <li class="fragment fadein">Espresso nécessite un test runner spécifique</li>
+</ul>
+</div>
+
+<pre class="fragment fadein"><code class="java" style="width: 940px" >defaultConfig {
+testInstrumentationRunner
+"com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+
+}
+</code></pre>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+<h4>GoogleInstrumentationTestRunner</h4>
+<div style="text-align: left;">
+<ul style="list-style: circle; line-height: 1.7em">
+    <li class="fragment fadein">onCreate de l'application finalisé avant le début des tests</li>
+    <li class="fragment fadein">Quand l'instrumentation est terminée, les activités sont finies </li>
+    <li class="fragment fadein">Monitoring des activités plus fiable</li>
+    <li class="fragment fadein">Peut être utilisé par d'autres frameworks</li>
+</ul>
+</div>
+</section>

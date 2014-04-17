@@ -1,0 +1,8 @@
+{
+  "name": "robotium-vs-espresso-get-ready-to-rumble",
+  "version": "0.1.0",
+  "dependencies": {
+    "reveal.js": "~2.6.1",
+    "jQuery": "2.1.0"
+  }
+}

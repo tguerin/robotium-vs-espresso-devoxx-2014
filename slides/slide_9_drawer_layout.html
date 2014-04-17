@@ -1,0 +1,17 @@
+<h3>Drawer layout</h3>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+
+    <h4>Robotium</h4>
+    <pre><code class="java">// Attention l'id du frame layout du menu doit absolument être "left_drawer"
+solo.setNavigationDrawer(Solo.OPENED);
+
+solo.setNavigationDrawer(Solo.CLOSED);</code></pre>
+
+    <h4>Espresso</h4>
+    <pre><code class="java">DrawerActions.openDrawer(R.id.drawer_layout);
+
+DrawerActions.closeDrawer(R.id.drawer_layout);</code></pre>
+
+</section>

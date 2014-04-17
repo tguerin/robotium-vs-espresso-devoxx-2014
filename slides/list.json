@@ -1,0 +1,132 @@
+[
+  {
+    "filename": "main.html",
+    "attr": {
+      "id": "Cover",
+      "data-background": "../lib/img/test-cover.jpg"
+    }
+  },
+  {
+    "filename": "main_players.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_1_mise_en_place.html",
+    "attr": {
+      "data-background": "../lib/img/setup-cover.png",
+      "style": "display: block; top: -20px; margin-top: -20px",
+      "class": "header center present"
+    }
+  },
+  {
+    "filename": "slide_2_gradle.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_3_test_runner.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_4_initialisation.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_5_expressivite.html",
+    "attr": {
+      "data-background": "../lib/img/expressive.png",
+      "style": "display: block; top: -20px; margin-top: -20px",
+      "class": "header center present"
+    }
+  },
+  {
+    "filename": "slide_6_robotium_api.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_7_espresso_api.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_13_listview.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_12_webview.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_9_drawer_layout.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_10_action_bar.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_11_back_keyboard.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_14_enchainements.html",
+    "attr": {
+      "data-background": "../lib/img/chun-li.png",
+      "style": "display: block; top: -20px; margin-top: -20px",
+      "class": "header center present"
+    }
+  },
+  {
+    "filename": "slide_15_robotium_waiting.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_16_espresso_philosophy.html",
+    "attr": {
+      "style": "display: block;",
+      "class": "stack present"
+    }
+  },
+  {
+    "filename": "slide_17_conclusion.html",
+    "attr": {
+      "data-background": "../lib/img/espresso-what-else.png",
+      "style": "display: block; top: -20px; margin-top: -20px",
+      "class": "header center present"
+    }
+  }
+]

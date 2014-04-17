@@ -1,0 +1,22 @@
+<h3>Robotium</h3>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+<div style="text-align: left">
+    <ul style="list-style: circle; line-height: 1.7em">
+        <li>Repose sur le principe du sleep and see<ul>
+            <li>solo.waitForActivity(Class class, int timeout)</li>
+            <li>solo.waitForCondition(Condition condition, int timeout)</li>
+            <li>solo.waitForDialogToOpen()</li>
+        </ul></li>
+    </ul>
+</div>
+
+<pre class="fragment grow"><code class="java" style="font-size: 25px">solo.clickOnView(R.id.start_activity_button);
+
+// On attend que la vue apparaisse avant d'agir
+solo.waitForView(R.id.view_in_new_activity);
+
+solo.clickOnView(R.id.view_in_new_activity);</code></pre>
+
+</section>

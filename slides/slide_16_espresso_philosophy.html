@@ -1,0 +1,50 @@
+<h3>Espresso</h3>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+<div style="text-align: left">
+    <ul style="list-style: circle; line-height: 1.7em">
+        <li>Entrée en jeu du GoogleInstrumentationTestRunner</li>
+        <li>Monitoring plus fin des activités et des ressources</li>
+        <li>Analyse du ThreadUI pour savoir quand agir</li>
+        <li>Pas de wait</li>
+    </ul>
+</div>
+<br/>
+<pre class="fragment grow"><code class="java" style="font-size: 25px">onView(withId(R.id.start_activity_button)).perform(click());
+
+onView(withId(R.id.view_in_new_activity)).perform(click());</code></pre>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+    <div style="text-align: left">
+        <ul style="list-style: circle; line-height: 1.7em">
+            <li>Possibilité d'enregistrer des idlingResources</li>
+        </ul>
+    </div>
+    
+    <pre><code class="java">class EspressoThreadPool extends ThreadPoolExecutor implements IdlingResource {
+    private int threadCount = 0;
+    ...
+    @Override
+    public synchronized void execute(Runnable r) {
+        threadCount++;
+        super.execute(r);
+    }
+    @Override
+    public synchronized boolean isIdleNow() {
+        return threadCount == 0;
+    }
+    @Override
+    protected synchronized void afterExecute(Runnable r, Throwable t) {
+        super.afterExecute(r, t);
+        threadCount--;
+    }
+}</code></pre>
+</section>
+
+<section data-background="lib/img/slide-devoxx-bg.png" data-background-size="6% 90%"
+         data-background-transition="slide" data-background-position="0% 25%" class="present" style="display: block;">
+<pre class="fragment "><code class="java">Espresso.registerIdlingResources(espressoThreadPool);</code></pre>
+</section>
